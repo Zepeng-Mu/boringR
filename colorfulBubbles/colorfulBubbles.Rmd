@@ -1,0 +1,44 @@
+---
+title: "ColorfulBubbles"
+author: "Zepeng (Phoenix) Mu"
+date: "2/28/2018"
+output: html_document
+---
+
+Below are some of the parameters that you can change.
+```{r}
+# generate pairs of x-y values
+mySize = 5
+x = seq(-mySize, mySize, by = 0.1)
+y = seq(-mySize, mySize, by = 0.1)
+
+number_of_points = 100
+x_points = sample(x, number_of_points, replace = F)
+y_points = sample(y, number_of_points, replace = F)
+
+
+# set graphic parameters
+myCex = rnorm(number_of_points, mean = 3, sd = 1)
+myCol = rainbow(number_of_points)
+myPch = 16
+
+# For RGB color
+red = sample(seq(0, 1, 0.1), number_of_points, replace = T)
+green = sample(seq(0, 1, 0.1), number_of_points, replace = T)
+blue = sample(seq(0, 1, 0.1), number_of_points, replace = T)
+```
+
+Now we can generate the plot.
+```{r fig.height=5, fig.width=5}
+# Plot
+mypar = par(bg = 'black', mar = rep(0.5, 4))
+plot.new()
+plot.window(xlim = c(-mySize, mySize), ylim = c(-mySize, mySize), asp = 1)
+points(x_points, y_points, cex = myCex, pch = myPch,
+       col = rgb(red, green, blue, alpha = 0.8))
+
+# signature
+legend("bottomright", legend="© Phoenix", bty = "n", text.col="gray70")
+
+
+```
