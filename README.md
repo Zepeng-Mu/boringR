@@ -16,3 +16,7 @@ This file, 3D_HWE, shows what the genotype distribution for HWE looks like when 
 
 ### CorlorfulCircle
 This file makes colorful lines within a circle, with several parameters that you can customize.
+
+### ColorfulBubbles
+Here I try some techniques that I learned recently to draw some graphs. This one is inspired by [Gaston Sanchez](http://www.gastonsanchez.com).
+
