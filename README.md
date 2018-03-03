@@ -20,3 +20,6 @@ This file makes colorful lines within a circle, with several parameters that you
 ### ColorfulBubbles
 Here I try some techniques that I learned recently to draw some graphs. This one is inspired by [Gaston Sanchez](http://www.gastonsanchez.com).
 
+### ColorfulBeams
+In this directory, I included a png file that can be used directly as a wallpaper on Macbook Pro 2011.
+
