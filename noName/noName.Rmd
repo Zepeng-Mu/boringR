@@ -1,0 +1,38 @@
+---
+title: "Colorful Arcs"
+author: "Zepeng (Phoenix) Mu"
+date: "3/4/2018"
+output: pdf_document
+---
+
+```{r}
+theta = seq(-2 * pi, 2 * pi, length = 300)
+a = sin(theta)
+x = a ^ 2 - mean(a ^ 2)
+y = cos(theta) + a
+y = y * 0.6
+```
+
+```{r}
+number_of_curves = 60
+red = sample(seq(0.5, 1, 0.1), number_of_curves, replace = T)
+green = sample(seq(0, 0.5, 0.1), number_of_curves, replace = T)
+blue = sample(seq(0.5, 1, 0.1), number_of_curves, replace = T)
+myCol = rgb(red, green, blue, alpha = 0.5)
+
+myLwd = sample(seq(0.4, 1, 0.1), number_of_curves, replace = T)
+```
+
+```{r fig.height=5, fig.width=5}
+shrink = seq(0.3, 1, length.out = number_of_curves)
+
+mypar = par(bg = 'black', mar = rep(0.5, 4))
+plot.new()
+plot.window(xlim = range(x), ylim = range(y), asp = 1)
+for (i in 1:number_of_curves) {
+  lines(x * shrink[i], y * shrink[i], lwd = myLwd[i], col = myCol[i])
+}
+
+# signature
+legend("bottomright", legend="© Phoenix", bty = "n", text.col="gray70")
+```
